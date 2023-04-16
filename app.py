@@ -1,4 +1,4 @@
-"""pytext v1.1.1 14:07 07.02.2023 by Youpiter TV"""
+"""pytext v1.2.0 14:07 07.02.2023 by Youpiter TV"""
 from darkdetect import theme as win_theme
 from sv_ttk import set_theme
 from os.path import exists
@@ -33,8 +33,8 @@ def run():
     system(f"start {filename}")
 filename = "new.txt"
 window = tk.Tk()
-window.title("pytext v1.1.1")
-labone = tk.Label(text="pytext v1.1.1 - made by Youpiter")
+window.title("pytext v1.2.0")
+labone = tk.Label(text="pytext v1.2.0 - made by Youpiter")
 labtwo = tk.Label(text=f"Opened {filename}.")
 inbox = tk.Text()
 filetext = tk.Entry()
