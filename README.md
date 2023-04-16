@@ -1,15 +1,8 @@
 # pytext
-Code editor by Susibaka5
-Programed in Python
+Code editor by `Susibaka5` - Programmed in `Python`
 
-require 1 lib to run:
+Requires `2` dependencies to run: `darkdetect` and `sv_ttk`
 
-tkinter
+Command to install using `pip` on `Python 3`: `pip3 install -r requirements.txt`
 
-command to install using pip on python 3:
-
-python3 -m pip install tkinter
-
-if dont works make try again
-
-if dont work again make issue report
+If it does not work, please try again. If it still does not work, create an Issue.
