@@ -1,4 +1,4 @@
-"""pytext v1.2.0 14:07 07.02.2023 by Youpiter TV"""
+"""pytext v1.2.0 12:27 GMT+2 15.04.2023 by Youpiter TV colaboration with ItzExotical"""
 from darkdetect import theme as win_theme
 from sv_ttk import set_theme
 from os.path import exists
