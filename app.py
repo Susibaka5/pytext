@@ -1,6 +1,5 @@
 """pytext v1.2.0 12:27 GMT+2 15.04.2023 by Youpiter TV colaboration with ItzExotical"""
 from darkdetect import theme as win_theme
-from tkinter import filedialog as fd
 from sv_ttk import set_theme
 from os.path import exists
 from os import system
@@ -21,11 +20,14 @@ def read():
         if not exists(filename): labtwo["text"] = f"File {filename} does not exist."; return
         data = open(file=filename, mode="r").read()
         inbox.delete("0.0", tk.END); inbox.insert("0.0", data, tk.END); inbox.update()
-        labtwo["text"] = f"Readed {filename}."
+        labtwo["text"] = f"Read {filename}."
 def openf():
     global filename
-    filetypes = (('text files', '*.txt'),('All files', '*.*'))
-    filename = fd.askopenfilename(title='Open a file',initialdir='/',filetypes=filetypes)
+    filename = filetext.get()
+    if not exists(filename):
+        labtwo["text"] = f"File {filename} does not exist."
+        return
+    labtwo["text"] = f"Opened {filename}."
 def run():
     if not exists(filename): labtwo["text"] = f"File {filename} does not exist."; return
     system(f"start {filename}")
@@ -35,12 +37,13 @@ window.title("pytext v1.2.0")
 labone = tk.Label(text="pytext v1.2.0 - made by Youpiter")
 labtwo = tk.Label(text=f"Opened {filename}.")
 inbox = tk.Text()
+filetext = tk.Entry()
 readb = tk.Button(text= "Read", command=read); saveb = tk.Button(text="Save", command=save)
 openb = tk.Button(text="Open", command=openf); runb = tk.Button(text="Run", command=run)
 toggleb = tk.Button(text= "Toggle theme", command=theme)
 labone.pack(); inbox.pack()
 readb.pack(padx=10, pady=20, side=tk.RIGHT); saveb.pack(padx=10, pady=20, side=tk.LEFT)
-labtwo.pack(); openb.pack(); runb.pack()
+labtwo.pack(); filetext.pack(); openb.pack(); runb.pack()
 toggleb.pack()
 set_theme(t)
 window.mainloop()
